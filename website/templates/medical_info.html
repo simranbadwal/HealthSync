@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Medical Health History Form{% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Medical Health History Form</h3>
+    <div class="form-group">
+        <label for="allergies">Do you currently have any allergies? or have previously had any allergies to medication or food alike.</label>
+        <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Enter Allergies"/>
+    </div> 
+    <div class="form-group">
+        <label for="disease">Have you ever contracted or currently have a disease? infectious, physiological, hereditary or deficiency.  </label>
+        <input type="text" class="form-control" id="disease" name="disease" placeholder="Enter Diseases"/>
+    </div> 
+    <div class="form-group">
+        <label for="symptoms">Are you currently experiencing any symptoms that is affecting your daily routine?</label>
+        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="Enter Symptoms"/>
+    </div> 
+    <div class="form-group">
+        <label for="medication">Are you currently taking or have taken any medication? Please list each of them from the previous year.</label>
+        <input type="text" class="form-control" id="medication" name="medication" placeholder="Enter Medication"/>
+    </div> 
+    <div class="form-group">
+        <label for="drugs">Are you consuming or have consumed any drugs? Please list each of them from the previous decade.</label>
+        <input type="text" class="form-control" id="drugs" name="drugs" placeholder="Enter Drugs consumed"/>
+    </div> 
+    <div class="form-group">
+        <label for="extrainfo">Are you consuming or have consumed any drugs? Please list each of them from the previous decade.</label>
+        <input type="text" class="form-control" id="extrainfo" name="extrainfo" placeholder="Enter Extra Information"/>
+    </div> 
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
