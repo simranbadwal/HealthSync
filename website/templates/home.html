@@ -2,7 +2,7 @@
 {% block content %}
 <h1 align="center">Notes</h1>
 <ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
+    {% for note in user_id.notes %}
     <li class="list-group-item">
       {{ note.data }}
       <button type="button" class="close" onClick="deleteNote({{ note.id }})">
@@ -18,4 +18,61 @@
       <button type="submit" class="btn btn-primary">Add Note</button>
     </div>
   </form>
+  <table>
+    <tr>
+     <th> {{ headings[0] }}</th>
+     <tr>
+      <td>{{ data[0] }}</td>
+     </tr>
+     <th> {{ headings[1] }}</th>
+     <tr>
+      <td>{{ data[1] }}</td>
+     </tr>
+     <th> {{ headings[2] }}</th>
+     <tr>
+      <td>{{ data[2] }}</td>
+     </tr>
+     <th> {{ headings[3] }}</th>
+     <tr>
+      <td>{{ data[3] }}</td>
+     </tr>
+     <th> {{ headings[4] }}</th>
+     <tr>
+      <td>{{ data[4] }}</td>
+     </tr>
+     <th> {{ headings[5] }}</th>
+     <tr>
+      <td>{{ data[5] }}</td>
+     </tr>
+     <th> {{ headings[6] }}</th>
+     <tr>
+      <td>{{ data[6] }}</td>
+     </tr>
+     <th> {{ headings[7] }}</th>
+     <tr>
+      <td>{{ data[7] }}</td>
+     </tr>
+    </tr>
+    <th> {{ headings[8] }}</th>
+    <tr>
+     <td>{{ data[8] }}</td>
+    </tr>
+    </tr>
+
+  </table>
+  <div align="center">
+    <button type="button" class="btn btn-primary" onclick="window.location.href='{{ url_for('auth.medical_info') }}'">Edit Information</button>
+  </div>
+
+
+
+    <!-- Footer -->
+    <footer class="text-center mt-5 footer"   style="width: 100%" margin = "auto" >
+      <div class="container-fluid">
+          <p>&copy; 2024 HealthSync Services. All rights reserved.</p>
+          <img src="{{ url_for('static', filename='images/image.png') }}" class="card-img-top">
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}
