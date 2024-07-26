@@ -6,22 +6,31 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
+headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies", "Current or Previous Diseases",
+             "Current Symptoms", "Current or Previous Medication", "Drugs Consumed in the Last Year", "Extra Information")
+
+
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password1')
         user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):               
-            flash('Logged In Successfully!', category='success')
-            login_user(user, remember=True)
-            return render_template("home.html", boolean=True, user=current_user)
-        elif not user:
-            flash("Email is incorrect or does not exist, try again or Sign Up.", category='error')
-        else:
+        if user:
+            if check_password_hash(user.password, password):               
+                flash('Logged In Successfully!', category='success')
+                login_user(user, remember=True)
+                userD2 = HealthForm.query.filter_by(user_id=current_user.id).first()
+                userD1 = User.query.filter_by(id=current_user.id).first()
+                data = (userD1.first_name, userD1.last_name, userD1.email, userD2.allergies, userD2.disease, userD2.symptoms, userD2.medication, userD2.drugs, userD2.extrainfo)
+                return render_template("home.html", user_id=current_user, headings=headings, data=data)
+            else:
                 flash('Incorrect Password, try again.', category='error')
+        else:
+            flash("Email is incorrect or does not exist, try again or Sign Up.", category='error')
         
-    return render_template("login.html", user=current_user)
+    return render_template("login.html", user_id=current_user)
 
 
 @auth.route('/logout')
@@ -74,12 +83,8 @@ def medical_info():
         new_data = HealthForm(user_id=current_user.id, allergies=allergies, disease=disease, symptoms=symptoms, medication=medication, drugs=drugs, extrainfo=extrainfo)
         user = HealthForm.query.filter_by(user_id=current_user.id).first()
         if user:
-            user.allergies = allergies
-            user.disease = disease
-            user.symptoms = symptoms
-            user.medication = medication
-            user.drugs = drugs
-            user.extrainfo = extrainfo
+            db.session.delete(user)
+            db.session.add(new_data)
             db.session.commit()
         else:
             db.session.add(new_data)
