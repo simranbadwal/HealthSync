@@ -14,9 +14,9 @@ headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies",
 
 
 def readFromDatabase(query):
-    searchQuery =f'http://15.156.34.180:8020/search-for-a-doctor?={query}'
-    print(searchQuery)
-    return searchQuery
+    searchQuery =f'http://15.156.34.180:8020/search-for-a-doctor/{query}'
+    result = get(searchQuery).json()
+    return result
 
 
 @views.route('/')
@@ -68,7 +68,7 @@ def doctorSearchResults():
         return render_template("homepage/components/noResultsFound2.html")
     
     
-    data = readFromDatabase(keyword)
+    data = readFromDatabase(keyword)['data'].strip()
     if len(data)==0:
         return render_template("homepage/components/noResultsFound.html")
     
