@@ -1,0 +1,74 @@
+
+
+<div class="container mx-auto my-10 py-10" id="carousel1">
+    <div class="h-24"></div>
+    <div class="text-center">
+        <h1 class="font-title font-black text-center text-4xl mb-10">A Few words from our users...</h1>
+    </div>
+    <div class="carousel w-full text-center">
+        <div id="review1" class="carousel-item relative w-full">
+            <div class="mx-auto">
+                <div class="w-3/4 mx-auto">
+                    <p class="py-3 text-2xl">
+                      "Patients can now collate health records from different medical providers and can show that information to their caregivers and care teams right from their iPhone. This effectively makes the patient a custodian of their own health data."
+                    </p>
+                    <h1 class="text-lg font-bold mt-3">Dr. Dan Perri</h1>
+                    <h1 class="text-md text-gray-600">Chief Medical Information Officer, St. Willy Wonka’s Healthcare - Ontario, Canada</h1>
+                  </div>
+            </div>
+            
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#review4" class="btn btn-circle">❮</a>
+            <a href="#review2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+    
+        <div id="review2" class="carousel-item relative w-full">
+            <div class="mx-auto">
+                <div class="w-3/4 mx-auto">
+                    <p class="py-3 text-2xl">
+                      "Empowering the patient with their health records on iPhone aligns with our vision of breakthrough innovations in patient-provider engagement. Seamless integration with our EHR makes it easy for our patients to have a complete picture of their health."
+                    </p>
+                    <h1 class="text-lg font-bold mt-3">Randy Gaboriault</h1>
+                    <h1 class="text-md text-gray-600"> Senior Vice President,Christiana Care</h1>
+                  </div>
+            </div>
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#review1" class="btn btn-circle">❮</a>
+            <a href="#review3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        
+        <div id="review3" class="carousel-item relative w-full">
+            <div class="mx-auto">
+                <div class="w-3/4 mx-auto">
+                    <p class="py-3 text-2xl">
+                      "Health Records on iPhone puts our patients at the centre of their care. As a Digital Health Exemplar organisation in the NHS, we are committed to the potential for technology to empower patients to take control of their healthcare."
+                    </p>
+                    <h1 class="text-lg font-bold mt-3">David Walliker</h1>
+                    <h1 class="text-md text-gray-600">Patient Suffuring from a rear Heart Diease -New Mexico City, Mexico </h1>
+                  </div>
+            </div>
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#review2" class="btn btn-circle">❮</a>
+            <a href="#review1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+    
+      </div>
+      <div class="w-1/2 h-12 border-b mx-auto border-b-4">
+        
+      </div>
+      <div class="h-12">
+      </div>
+</div>
+
+
+<script>
+       
+       Array.from(document.getElementById('carousel1').getElementsByTagName("a")).forEach((button) => {
+        button.className="btn btn-outline rounded-full btn-lg"
+    })
+
+</script>
+

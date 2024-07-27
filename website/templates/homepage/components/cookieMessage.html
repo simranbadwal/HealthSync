@@ -1,0 +1,26 @@
+<div class="fixed bottom-0 left-0 z-[100] w-full p-10 appearFromBottom" id="cookieMessageBox" data-class="fade-in-down">
+    <div class="bg-base-100 rounded-lg border shadow-lg">
+        <div class="flex justify-between p-3">
+            <div class="w-9/12">
+                We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for other purposes as specified in the cookie policy.
+                Use the “Accept” button to consent. Use the “Reject” button or close this notice to continue without accepting.
+            </div>
+
+            <div class="flex gap-2 mt-2" id="buttons">
+                <button class="" onclick="acceptCookies()">Accept Cookies</button>
+                <button class="" onclick="removeCookieMessageBox()">Reject Cookies</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    updateSiblings(
+  "buttons",
+  "btn btn-sm bg-blue-500 rounded-full text-white px-5"
+);
+if (getCookie("userConsent") != "") {
+  removeCookieMessageBox();
+}
+
+</script>

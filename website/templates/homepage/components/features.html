@@ -1,0 +1,45 @@
+<div class="flex justify-center pt-10" id="features">
+    <div class="stats stats-vertical lg:stats-horizontal text-center bg-transparent z-[20]">
+          <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+              <div class="artboard artboard-demo phone-1">
+                  <div class="z-[20]" id="features-display" >
+                   
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="bg-blue-300 h-[60vh] absolute w-full rounded-t-[500px] translate-y-[220px]" id="search">
+        <h1>adf</h1>
+      </div>
+</div>
+
+
+
+<script>
+  let featuresDisplay = document.getElementById('features-display')
+  let x = 0
+  let imageArray= ['https://www.svgrepo.com/show/284173/medical-history-doctor.svg',
+                    'https://www.svgrepo.com/show/284181/smartphone.svg',
+                    "https://www.svgrepo.com/show/284185/doctor.svg",
+                  "https://www.svgrepo.com/show/284180/pills-pill.svg"]
+
+  let textArray = ["Engage in your health",
+                    "Add health records to the Web app",
+                    "Real Time Feedback From Doctors",
+                    "Stay Up To Date!"]
+
+  setInterval(()=>{
+    let image = imageArray[x]
+    let text = textArray[x]
+    featuresDisplay.innerHTML=`<img class="w-full p-10" src="${image}" alt=""><p class="text-xl">${text}</p>`
+    x+=1
+    if(x>=4){
+      x=0
+    }
+  },1500)
+
+</script>

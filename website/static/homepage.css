@@ -1,0 +1,14 @@
+.appearFromBottom{
+    opacity: 0;
+    animation: appearFromBottomAnimation 1s forwards;
+    animation-delay: 1s;
+}
+@keyframes appearFromBottomAnimation {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }to{
+        opacity: 100;
+        transform: translateY(0px);
+    }
+}

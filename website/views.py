@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from .models import Note, HealthForm, User
 from . import db
 import json
-
+from requests import get
 views = Blueprint('views', __name__)
 
 headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies", "Current or Previous Diseases",
@@ -11,7 +11,75 @@ headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies",
 
 
 
-@views.route('/', methods=['GET','POST'])
+
+
+def readFromDatabase(query):
+    searchQuery =f'http://15.156.34.180:8020/search-for-a-doctor?={query}'
+    print(searchQuery)
+    return searchQuery
+
+
+@views.route('/')
+@views.route('/homeapage')
+def landingPage():
+    """
+    -------------------------------------------------------
+    Handles requests to the landing page.
+    Routes:
+        /         : The root URL of the website.
+        /homepage : An alternative URL for the landing page.
+    Returns:
+        A rendered HTML template for the landing page with provided data.
+    -------------------------------------------------------
+    Parameters:
+        None
+    Returns:
+        A rendered HTML template for the landing page with provided data.
+    -------------------------------------------------------
+    """
+    # dynamic Tilte to webpage
+    data={
+        'title':"Health-Sync"
+    }
+    return render_template('homepage/homepage.html',data= data)
+
+
+@views.route('/searchForAdoctor')
+def doctorSearchResults():
+    """
+    -------------------------------------------------------
+    Handles requests to search for a doctor based on a keyword.
+    Route:
+        /searchForAdoctor : Endpoint for searching doctors.
+    Returns:
+        A rendered HTML template with search results or a 'no results found' message.
+    -------------------------------------------------------
+    Parameters:
+        None
+    Returns:
+        A rendered HTML template based on the search results:
+            - If the keyword is empty, returns "noResultsFound2.html".
+            - If no matching results are found, returns "noResultsFound.html".
+            - If matching results are found, returns "searchBoxResultItem.html" with the data.
+    -------------------------------------------------------
+    """
+    keyword = request.args.get("keyword")
+    if len(keyword)==0:
+        return render_template("homepage/components/noResultsFound2.html")
+    
+    
+    data = readFromDatabase(keyword)
+    if len(data)==0:
+        return render_template("homepage/components/noResultsFound.html")
+    
+    return render_template("homepage/components/searchBoxResultItem.html",data= data)
+
+
+
+
+
+# change this to whatever path you want, i want shiffted the landing page to main route
+@views.route('/SIMRAN', methods=['GET','POST'])
 @login_required
 def home():
     

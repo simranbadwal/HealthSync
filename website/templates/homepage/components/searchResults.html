@@ -1,0 +1,65 @@
+<div class="sreachbox w-[200%] mx-auto">
+    <!-- input box and button -->
+    <div class="w-full">
+        <label class="input input-bordered flex items-center sreachbox">
+           
+            <input type="text" name="keyword" class="grow w-full" placeholder="Search A Doctor by Name, Speciality or Location" hx-get="/searchForAdoctor"  hx-trigger="keyup delay:1s" hx-target="#menu-r" onkeyup="displayLoader()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="h-4 w-4 opacity-70">
+              <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd" />
+            </svg>
+        </label>
+    </div>
+  
+    <!-- results box -->
+    <div class="dropdown bg-base-100 w-[450px] max-h-96 absolute z-[100] resultsBox mt-2 border rounded-box overflow-y-scroll">
+      <ul class="menu" id="menu-r">
+
+      </ul>
+    </div>
+  </div>
+
+  
+  
+
+  <style>
+    .resultsBox{
+      visibility: hidden;
+    }
+    
+  .sreachbox:focus-within .resultsBox{
+      visibility: visible;
+    }
+
+.loader {
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #12057af2;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}
+  </style>
+
