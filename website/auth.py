@@ -30,7 +30,7 @@ def login():
         else:
             flash("Email is incorrect or does not exist, try again or Sign Up.", category='error')
         
-    return render_template("login.html", user_id=current_user)
+    return render_template("loginPage/login.html", user_id=current_user)
 
 
 @auth.route('/logout')

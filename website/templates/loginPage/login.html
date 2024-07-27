@@ -1,0 +1,49 @@
+{% extends "baseTailwind.html" %} 
+
+
+{%block content%}
+{%include 'Homepage/components/header.html'%}
+
+
+<div class="h-screen flex justify-center items-center" style="background-image: url('https://plus.unsplash.com/premium_vector-1682306438716-78f7cc8ffa99?q=80&w=3250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-position: left; background-size: cover; background-repeat: no-repeat;">
+    <!-- ss -->
+    <div class="w-1/4 p-4 pop">
+        <div class="bg-base-200 p-5 rounded-xl shadow-lx border border-blue-700 py-5">
+            <legend class="text-4xl font-black font-title text-center my-10 text-blue-700">Log in</legend>
+            {%include 'loginPage/components/form.html'%}
+            <p class="text-center text-sm font-bold mt-5 ">Need an Account? <span class="text-blue-700"><a href="{{ url_for('auth.sign_up') }}">Sign Up</a></span> </p>
+        </div>   
+        
+    </div>
+</div>
+
+
+<style>
+    .pop{
+        opacity: 0;
+        animation: appear 1s forwards;
+    }
+
+
+    @keyframes appear {
+        from{
+            opacity: 0;
+            transform: translateX(300px);
+        }to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+</style>
+
+
+
+
+
+
+<script>
+    document.getElementById('menu-outter').style.visibility='Hidden'
+    document.body.style.background="white"
+</script>
+{% endblock%}

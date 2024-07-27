@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{data.pageTitle}}</title>
+
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="static/app.js"></script>
@@ -22,6 +22,12 @@
 
 </style>
 <body class="roboto-regular bg-neutral-100">
+ 
+  
+  
+
+{%block content %}
+{%endblock%}
 
 <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 </body>

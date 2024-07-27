@@ -1,10 +1,10 @@
 <header class="backdrop-blur fixed w-full align-center z-[200]" id="navBar">
    <div class="container mx-auto flex justify-between pt-2 border-b">
     <!-- logo -->
-    <h1 class="text-2xl text-blue-900 font-bold translate-y-[10px]">HealthSync</h1>
+    <a href="{{ url_for('views.landingPage')}}"><h1 class="text-2xl text-blue-900 font-bold translate-y-[10px]">HealthSync</h1></a>
 
     <!-- meneu -->
-    <div class="">
+    <div class="" id="menu-outter">
         <ul class="menu menu-horizontal gap-1 font-bold" id="menu1">
             <a href="#home">Overview</a>
             <a href="#features">Platform</a>
