@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% block title %}
+Find User
+{% endblock %} 
+
+{%block content %}
+<form method="POST">
+    <h3 align="center">Find a User's Health Sync and Edit</h3>
+    <div class="form-group">
+        <label for="id">Enter User ID</label>
+        <input type="id" class="form-control" id="id" name="id" placeholder="Find User ID"/>
+    </div> 
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if patients %}
+<h2>Patients List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <!-- Add other patient fields as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.email }}</td>
+                <!-- Add other patient fields as needed -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No patients found.</p>
+{% endif %}
+
+{% endblock %}

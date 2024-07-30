@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}HealthSync{% endblock %}
+{% block content %}
+<h1 align="center">Doctor HomePage</h1>
+  <table>
+    <tr>
+     <th> {{ headings[0] }}</th>
+     <tr>
+      <td>{{ data[0] }}</td>
+     </tr>
+     <th> {{ headings[1] }}</th>
+     <tr>
+      <td>{{ data[1] }}</td>
+     </tr>
+     <th> {{ headings[2] }}</th>
+     <tr>
+      <td>{{ data[2] }}</td>
+     </tr>
+     <th> {{ headings[3] }}</th>
+     <tr>
+      <td>{{ data[3] }}</td>
+     </tr>
+    </tr>
+    <div align="center">
+      <button type="button" class="btn btn-primary" onclick="window.location.href='{{ url_for('auth.add_user') }}'">Add a User to Profile</button>
+    </div>
+    <div align="center">
+      <button type="button" class="btn btn-primary" onclick="window.location.href='{{ url_for('auth.find_user') }}'">Edit a User's Medical Information</button>
+    </div>
+{% endblock %}
