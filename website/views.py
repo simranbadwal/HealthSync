@@ -3,13 +3,14 @@ from flask_login import login_required, current_user
 from .models import Note, HealthForm, User
 from . import db
 import json
-from requests import get
+import pip._vendor.requests as requests
+from pip._vendor.requests import get
 views = Blueprint('views', __name__)
 
 headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies", "Current or Previous Diseases",
              "Current Symptoms", "Current or Previous Medication", "Drugs Consumed in the Last Year", "Extra Information")
 
-
+headings_Doctor = ("Doctor Speciality","First Name", "Last Name", "Email")
 
 
 
@@ -85,29 +86,39 @@ def home():
     
     def redirect_action():
         return redirect(url_for('auth.medical_info'))
+    if current_user.isDoctor == False:
+        if request.method == 'POST':
+            note = request.form.get('note')
+            
 
-    if request.method == 'POST':
-        note = request.form.get('note')
-        
+            if len(note) < 1:
+                flash('Note for the Doctor is too short!', category='error')
+            else:
+                new_note = Note(data=note, user_id=current_user.id)
+                db.session.add(new_note)
+                db.session.commit()
+                flash('Note is given to Doctor!', category='success')
 
-        if len(note) < 1:
-            flash('Note for the Doctor is too short!', category='error')
-        else:
-            new_note = Note(data=note, user_id=current_user.id)
-            db.session.add(new_note)
-            db.session.commit()
-            flash('Note is given to Doctor!', category='success')
+        userD2 = HealthForm.query.filter_by(user_id=current_user.id).first()
+        userD1 = User.query.filter_by(id=current_user.id).first()
 
-    userD2 = HealthForm.query.filter_by(user_id=current_user.id).first()
-    userD1 = User.query.filter_by(id=current_user.id).first()
-
-    data = ( 
-    userD1.first_name, userD1.last_name, userD1.email, userD2.allergies, userD2.disease, userD2.symptoms, userD2.medication, userD2.drugs, userD2.extrainfo
-    )
-    return render_template("home.html", user_id=current_user, headings=headings, data=data)
+        data = ( 
+        userD1.first_name, userD1.last_name, userD1.email, userD2.allergies, userD2.disease, userD2.symptoms, userD2.medication, userD2.drugs, userD2.extrainfo
+        )
+        return render_template("home.html", user_id=current_user, headings=headings, data=data, )
+    else:
+        userD1 = User.query.filter_by(id=current_user.id).first()
+        data = ( 
+        "Dr",userD1.first_name, userD1.last_name, userD1.email
+        )
+        return render_template("home_doctor.html", user_id=current_user, headings=headings_Doctor, data=data)
 
 
-@views.route('/delete-note',methods=['POST'])
+
+    
+
+
+@views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
     noteId = note['noteId']
@@ -117,3 +128,4 @@ def delete_note():
         db.session.commit()
     
     return jsonify({})
+
