@@ -2,11 +2,11 @@
 {% block content%}
 
 {% include 'homepage/components/header.html'%}
-<div class="h-screen flex justify-end">
+<div class="h-screen flex justify-end overflow-hidden">
     <div class="w-3/4 mx-auto py-10">
         <div class="h-16">
         </div>
-        <div class="my-10 border rounded-xl shadow-xl ">
+        <div class="my-10 border rounded-xl shadow-md mt-10 border rounded-lg bg-white appear border-blue-700 shadow-blue-300 ">
             <h1 class="text-center py-4 font-title font-black text-4xl text-blue-700 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">Create An User Account</h1>
             <div class="flex justify-center align-center overflow-hidden">
                 <div class="w-1/2 grid items-center">
@@ -17,6 +17,7 @@
                     {% include 'signUp/patientForm.html'%}
                 </div>
             </div>
+            <p class="text-center text-sm font-bold my-2 ">Need To A <span class="text-blue-700"><a  href="{{ url_for('auth.sign_up_doctor') }}">Doctor Account</a></span> ?</p>
         </div>
         
     </div>

@@ -1,0 +1,25 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="{% static 'app.js'%}"></script>
+</head>
+<body>
+<div class="bg-base-200 h-screen">
+
+
+
+{%include 'common/include/menuSectionSection.html'%}
+
+
+</div>
+{%include 'common/profile.html'%}    
+
+{%include 'common/themeChanger.html'%}
+</body>
+</html>

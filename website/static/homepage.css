@@ -12,3 +12,18 @@
         transform: translateY(0px);
     }
 }
+
+.appear{
+    opacity: 0;
+    animation: appearAnimation 1s forwards;
+}
+
+@keyframes appearAnimation{
+    from{
+        transform: translateY(2000px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

@@ -4,11 +4,11 @@
 {% include 'homepage/components/header.html'%}
 
 
-<div class="h-screen flex justify-end z-[20]">
+<div class="h-screen flex justify-end z-[20] overflow-hidden">
     <div class="w-3/4 mx-auto py-10">
         <div class="h-16">
         </div>
-        <div class="my-10 border rounded-xl shadow-xl bg-white">
+        <div class="mt-10 border rounded-lg shadow-md bg-white appear border-blue-700 shadow-blue-300">
             <h1 class="text-center py-4 font-title font-black text-4xl text-blue-700 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">Create A Doctor Account</h1>
             <div class="flex justify-center align-center overflow-hidden">
                 <div class="w-1/2 p-10">
@@ -19,9 +19,11 @@
                     <img class="w-full" src="https://plus.unsplash.com/premium_vector-1682302025912-7d3dc36348d4?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                 </div>
             </div>
+            <p class="text-center text-sm font-bold my-2 ">Need To An <span class="text-blue-700"><a   href="{{ url_for('auth.sign_up') }}">User Account</a></span> ?</p>
         </div>
     </div>
 </div>
+
 
 
 

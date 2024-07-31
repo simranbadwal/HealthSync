@@ -14,7 +14,7 @@
             <div tabindex="0" role="button" class="font-bold text-sm py-2 px-5 rounded-lg hover:scale-[1.1] hover:underline hover:cursor-pointer hover:bg-blue-500 hover:text-base-100 text-blue-900 border border-blue-900 bg-blue-100 transition duration-200">Login</div>
             <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
               <li><a href="{{ url_for('auth.login') }}" class="text-lg"><img class="w-16" src="https://www.svgrepo.com/show/284208/patient.svg" alt="">Patient</a></li>
-              <li><a class="text-lg"><img class="w-16" src="https://www.svgrepo.com/show/284184/doctor.svg" alt="">Doctor</a></li>
+              <li><a href="{{ url_for('auth.login') }}" class="text-lg"><img class="w-16" src="https://www.svgrepo.com/show/284184/doctor.svg" alt="">Doctor</a></li>
             </ul>
           </div>
     </div>
