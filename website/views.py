@@ -19,13 +19,13 @@ def readFromDatabase(query):
     -------------------------------------------------------
     Executes a search query to retrieve data from a database.
     The function constructs a search URL using the provided query,
-    sends a GET request to the URL, and returns the result as a JSON object.
-    Use: result = readFromDatabase('some_query')
+    sends a GET request to the database, and returns result as string
+    Use: result = readFromDatabase('query')
     -------------------------------------------------------
     Parameters:
         query - The search query to be executed (String).
     Returns:
-        result - The result of the query in JSON format (JSON object).
+        result - String.
     -------------------------------------------------------
     """
     searchQuery = f'http://15.156.34.180:8020/search-for-a-doctor/{query}'
