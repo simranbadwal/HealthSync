@@ -1,33 +1,45 @@
-{% extends "base.html" %} {% block title %}Medical Health History Form{% endblock %}
+{% extends "baseTailwind.html" %} 
+{% block title %}Medical Health History Form{% endblock %}
 {% block content %}
-<form method="POST">
-    <h3 align="center">Medical Health History Form</h3>
-    <div class="form-group">
-        <label for="allergies">Do you currently have any allergies? or have previously had any allergies to medication or food alike.</label>
-        <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Enter Allergies"/>
-    </div> 
-    <div class="form-group">
-        <label for="disease">Have you ever contracted or currently have a disease? infectious, physiological, hereditary or deficiency.  </label>
-        <input type="text" class="form-control" id="disease" name="disease" placeholder="Enter Diseases"/>
-    </div> 
-    <div class="form-group">
-        <label for="symptoms">Are you currently experiencing any symptoms that is affecting your daily routine?</label>
-        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="Enter Symptoms"/>
-    </div> 
-    <div class="form-group">
-        <label for="medication">Are you currently taking or have taken any medication? Please list each of them from the previous year.</label>
-        <input type="text" class="form-control" id="medication" name="medication" placeholder="Enter Medication"/>
-    </div> 
-    <div class="form-group">
-        <label for="drugs">Are you consuming or have consumed any drugs? Please list each of them from the previous decade.</label>
-        <input type="text" class="form-control" id="drugs" name="drugs" placeholder="Enter Drugs consumed"/>
-    </div> 
-    <div class="form-group">
-        <label for="extrainfo">Is there any extra information we should know?</label>
-        <input type="text" class="form-control" id="extrainfo" name="extrainfo" placeholder="Enter Extra Information"/>
-    </div> 
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+{% include 'homepage/components/header.html'%}
+<div class="h-32">
+
+</div>
+<div class="container mx-auto pb-10">
+    <form method="POST" class="w-1/2 mx-auto p-5 bg-white shadow-lg">
+        <h3 class="text-center text-4xl text-blue-700 font-title font-black mb-4">Medical Health History Form</h3>
+        <div class="form-group">
+            <label for="allergies">Do you currently have any allergies? or have previously had any allergies to medication or food alike.</label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="allergies" name="allergies" placeholder="Enter Allergies"/>
+        </div> 
+        <div class="form-group">
+            <label for="disease">Have you ever contracted or currently have a disease? infectious, physiological, hereditary or deficiency.  </label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="disease" name="disease" placeholder="Enter Diseases"/>
+        </div> 
+        <div class="form-group">
+            <label for="symptoms">Are you currently experiencing any symptoms that is affecting your daily routine?</label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="symptoms" name="symptoms" placeholder="Enter Symptoms"/>
+        </div> 
+        <div class="form-group">
+            <label for="medication">Are you currently taking or have taken any medication? Please list each of them from the previous year.</label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="medication" name="medication" placeholder="Enter Medication"/>
+        </div> 
+        <div class="form-group">
+            <label for="drugs">Are you consuming or have consumed any drugs? Please list each of them from the previous decade.</label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="drugs" name="drugs" placeholder="Enter Drugs consumed"/>
+        </div> 
+        <div class="form-group">
+            <label for="extrainfo">Is there any extra information we should know?</label>
+            <input type="text" class="input input-border w-full border-blue-700 focus:scale-[1.05] mb-4 focus:border-2 focus:border-blue-400 transition duration-400" id="extrainfo" name="extrainfo" placeholder="Enter Extra Information"/>
+        </div> 
+        <br />
+        <button type="submit" class="btn w-full bg-white border-blue-700 hover:bg-blue-600 hover:text-white text-blue-700">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('menu-outter').style.visibility='Hidden'
+    document.body.style.background="white"
+</script>
 {% endblock %}
 
