@@ -17,16 +17,19 @@
       </div>
 </div>
 
+<div class="hidden" id="images">
+  <img class="w-full p-10" src="https://www.svgrepo.com/show/284173/medical-history-doctor.svg" alt="">
+  <img class="w-full p-10" src="https://www.svgrepo.com/show/284185/doctor.svg" alt="">
+  <img class="w-full p-10" src="https://www.svgrepo.com/show/284181/smartphone.svg" alt="">
+  <img class="w-full p-10" src="https://www.svgrepo.com/show/284180/pills-pill.svg" alt="">
+</div>
 
 
 <script>
   let featuresDisplay = document.getElementById('features-display')
   let x = 0
-  let imageArray= ['https://www.svgrepo.com/show/284173/medical-history-doctor.svg',
-                    'https://www.svgrepo.com/show/284181/smartphone.svg',
-                    "https://www.svgrepo.com/show/284185/doctor.svg",
-                  "https://www.svgrepo.com/show/284180/pills-pill.svg"]
-
+  let imageArray= document.getElementById("images").querySelectorAll("img")
+console.log(imageArray)
   let textArray = ["Engage in your health",
                     "Add health records to the Web app",
                     "Real Time Feedback From Doctors",
@@ -35,7 +38,8 @@
   setInterval(()=>{
     let image = imageArray[x]
     let text = textArray[x]
-    featuresDisplay.innerHTML=`<img class="w-full p-10" src="${image}" alt=""><p class="text-xl">${text}</p>`
+    featuresDisplay.innerHTML=`<p class="text-2xl font-bold">${text}</p>`
+    featuresDisplay.appendChild(image)
     x+=1
     if(x>=4){
       x=0
