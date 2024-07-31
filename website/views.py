@@ -15,8 +15,21 @@ headings_Doctor = ("Doctor Speciality","First Name", "Last Name", "Email")
 
 
 def readFromDatabase(query):
-    searchQuery =f'http://15.156.34.180:8020/search-for-a-doctor/{query}'
-    result = get(searchQuery).json()
+    """
+    -------------------------------------------------------
+    Executes a search query to retrieve data from a database.
+    The function constructs a search URL using the provided query,
+    sends a GET request to the URL, and returns the result as a JSON object.
+    Use: result = readFromDatabase('some_query')
+    -------------------------------------------------------
+    Parameters:
+        query - The search query to be executed (String).
+    Returns:
+        result - The result of the query in JSON format (JSON object).
+    -------------------------------------------------------
+    """
+    searchQuery = f'http://15.156.34.180:8020/search-for-a-doctor/{query}'
+    result = get(searchQuery).json()['data'].strip()
     return result
 
 
@@ -69,7 +82,7 @@ def doctorSearchResults():
         return render_template("homepage/components/noResultsFound2.html")
     
     
-    data = readFromDatabase(keyword)['data'].strip()
+    data = readFromDatabase(keyword)
     if len(data)==0:
         return render_template("homepage/components/noResultsFound.html")
     
