@@ -75,7 +75,7 @@ def sign_up():
             login_user(new_user, remember=True)
             flash('Account Created with Health Sync! Thank You for Joining.', category='success')
             return redirect(url_for('auth.medical_info'))
-    return render_template("sign_up.html", user=current_user)
+    return render_template("signUp/registerNewPatient.html", user=current_user)
 
 @auth.route('/sign-up-doctor', methods=['GET', 'POST'])
 def sign_up_doctor():
@@ -109,7 +109,7 @@ def sign_up_doctor():
             login_user(new_user, remember=True)
             flash('Account Created with Health Sync! Thank You for Joining.', category='success')
             return redirect(url_for('views.home'))
-    return render_template("sign_up_doctor.html", user=current_user)
+    return render_template("signUp/registerNewDoctor.html", user=current_user)
 
 
 @auth.route('/add-user', methods=['GET', 'POST'])
