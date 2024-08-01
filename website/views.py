@@ -118,7 +118,7 @@ def home():
         data = ( 
         userD1.first_name, userD1.last_name, userD1.email, userD2.allergies, userD2.disease, userD2.symptoms, userD2.medication, userD2.drugs, userD2.extrainfo
         )
-        return render_template("home.html", user_id=current_user, headings=headings, data=data, )
+        return render_template("homeNew.html", user_id=current_user, headings=headings, data=data, )
     else:
         userD1 = User.query.filter_by(id=current_user.id).first()
         data = ( 

@@ -1,14 +1,16 @@
-<div class="drawer drawer-end">
+<div class="drawer drawer-end z-[400]">
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
     <div class="drawer-side">
       <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 justify-center items-center">
         <!-- Sidebar content here -->
         {%include 'userDashboard/components/profilePictureSection.html'%}
-        <li class="mt-5 font-title text-4xl font-black">David</li>
-        <li class="text-xl font-black">Bosset</li>
+        <li class="mt-5 font-title text-4xl font-black">{{data[0]}}</li>
+        <li class="text-xl font-black">{{data[1]}}</li>
 
-        <button class="btn w-full mt-5 btn-warning">Logout</button>
+        <a href="{{ url_for('auth.logout') }}" class="btn w-full mt-5 btn-warning">Logout</a>
+        <a class="btn w-full mt-5 btn-warning"  href="{{ url_for('auth.medical_info') }}">Edit Information</a>
+        <a class="btn w-full mt-5 btn-warning" href="{{ url_for('auth.add_user') }}">Add a Doctor to Profile</a>
       </ul>
     </div>
   </div>

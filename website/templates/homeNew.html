@@ -1,0 +1,108 @@
+{% extends "baseTailwind.html" %} 
+{% block content %}
+
+
+{% include 'homepage/components/header.html'%}
+<div class="h-24"></div>
+{%include 'userDashboard/profileMain.html'%}
+
+
+
+  
+
+  <div class="container px-20 mx-auto pb-10">
+
+    <div class="flex justify-start ">
+      <ul class="menu menu-horizontal bg-blue-100 rounded-box gap-3 my-3 shadow-xl">
+        <a class="btn bg-white border border-blue-700 hover:bg-blue-700 hover:text-white"  href="{{ url_for('auth.medical_info') }}">Edit Information</a>
+        <a class="btn bg-white border border-blue-700 hover:bg-blue-700 hover:text-white" href="{{ url_for('auth.add_user') }}">Add a Doctor to Profile</a>
+      </ul>
+    </div>
+  
+
+    <div class="container p-5 bg-white rounded-xl shadow-xl">
+      <table class="table table-pin-rows table-pin-cols">
+        <tr>
+         <th> {{ headings[0] }}</th>
+         <tr>
+          <td>{{ data[0] }}</td>
+         </tr>
+         <th> {{ headings[1] }}</th>
+         <tr>
+          <td>{{ data[1] }}</td>
+         </tr>
+         <th> {{ headings[2] }}</th>
+         <tr>
+          <td>{{ data[2] }}</td>
+         </tr>
+         <th> {{ headings[3] }}</th>
+         <tr>
+          <td>{{ data[3] }}</td>
+         </tr>
+         <th> {{ headings[4] }}</th>
+         <tr>
+          <td>{{ data[4] }}</td>
+         </tr>
+         <th> {{ headings[5] }}</th>
+         <tr>
+          <td>{{ data[5] }}</td>
+         </tr>
+         <th> {{ headings[6] }}</th>
+         <tr>
+          <td>{{ data[6] }}</td>
+         </tr>
+         <th> {{ headings[7] }}</th>
+         <tr>
+          <td>{{ data[7] }}</td>
+         </tr>
+        </tr>
+        <th> {{ headings[8] }}</th>
+        <tr>
+         <td>{{ data[8] }}</td>
+        </tr>
+        </tr>
+    
+      </table>
+
+    </div>
+
+
+    
+    <div class=" p-5 rounded-xl shadow-xl border-gray-200 border my-10">
+      <form method="POST" class="w-full">
+        <textarea name="note" id="note" class="border border-blue-700 rounded-xl w-full h-32 py-10"></textarea>
+        <br />
+        <div>
+          <button type="submit" class="btn btn-primary">Add Note</button>
+        </div>
+      </form>
+    </div>
+
+
+
+    <h1 class="text-center text-3xl text-blue-700 font-title font-black">Notes</h1>
+    <ul class="menu menu-vertical" id="notes">
+        {% for note in user_id.notes %}
+        <li class="flex justify-between flex-row my-2 border border-blue-200 p-2 rounded-lg">
+          <span>{{ note.data }}</span>
+          <button type="submit" class="btn btn-error w-24" onClick="deleteNote({{note.id }})">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+            </svg>
+          </button>
+        </li>
+        {% endfor %}
+    </ul>
+
+  </div>
+
+
+
+<script>
+    document.getElementById('menu-outter').style.visibility='Hidden'
+    document.body.style.background="white"
+</script>
+
+
+
+{% endblock %}
