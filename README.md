@@ -13,12 +13,12 @@
 
 **Table of Contents**
 
-**Summary                                                                                             
-**Introduction and problem definition                                                         
-**Overall Description                                                                                 
-**Operating Environment                                                                              
-**System Architecture                                                                                  
-**Functional Requirements                                                                             
+**Summary**                                                                                             
+**Introduction and problem definition**                                                         
+**Overall Description**                                                                                 
+**Operating Environment**                                                                              
+**System Architecture**                                                                                  
+**Functional Requirements**                                                                             
 **Nonfunctional Requirements**                                                                                  
 **Solution Features**
 
@@ -40,7 +40,7 @@ Health-Sync is a web-based application designed to streamline the management of 
 
 **Problem Definition**
 
-	Users often struggle with ineffective communication with doctors and difficulties managing their medical records on current platforms. Health Sync addresses these issues by providing comprehensive tools for real-time interaction and medical record management. This ensures that both patients and doctors can keep a patient’s medical records accurate and up-to-date,and this allows for better communication between them. This ultimately improves the overall efficiency and effectiveness of medical record management while at the same time allowing healthcare staff to focus more on patient care.
+Users often struggle with ineffective communication with doctors and difficulties managing their medical records on current platforms. Health Sync addresses these issues by providing comprehensive tools for real-time interaction and medical record management. This ensures that both patients and doctors can keep a patient’s medical records accurate and up-to-date,and this allows for better communication between them. This ultimately improves the overall efficiency and effectiveness of medical record management while at the same time allowing healthcare staff to focus more on patient care.
 
 ## **Definitions, Acronyms, and Abbreviations**
 
