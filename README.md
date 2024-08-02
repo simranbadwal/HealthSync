@@ -21,10 +21,9 @@
 **Functional Requirements**                                                                             
 **Nonfunctional Requirements**                                                                                  
 **Solution Features**
-
 **Solution Limitations and assumptions**
 
-**Summary**
+# Summary
 
 Health Sync is a web-based application aimed at solving a global challenge faced by healthcare management, which is ineffective communication with doctors and difficulties in managing medical records on existing platforms. By enabling effective communication with doctors and simplifying medical record management, Health Sync helps staff concentrate more on patient care and maintain more accurate patient information. A user can just visit the landing page, create an account, and register as a doctor or patient. If he's a patient, the patient can create medical records, add doctors to profiles, and view and update medical records. If he's a doctor, he can view and update medical records. As you can see, a click of a button on Health Sync can make health care management more efficient and effective. In order to make health sync possible, the architecture is built around three key subcomponents. The Account Management Sub-component handles user registration, login, and logout, interfacing with the User Database to manage and secure user profiles. The Patient Management Sub-component supports patients by allowing them to update and view their medical records and add doctors to their profiles, working closely with the Notes/Health Form Database to ensure accurate management of medical records. Meanwhile, the Doctor Management Sub-component enables doctors to view and update patient records, interacting with the Medical Records Database to store and retrieve the latest patient information. Together, these components ensure efficient and secure management of healthcare data and user interactions. The Health Sync app should also be HIPAA- and GDPR-compliant for protecting personal health information and its privacy. It also has to comply with accessibility WCAG 2.1 AA standards for all people to use it. For data protection and confidentiality, it also needs to be encrypted in transit and at rest. All of these contribute to the smooth operation and success of Health Sync. 
 
