@@ -6,7 +6,12 @@
 
 # **Health-Sync**
 
-**Prepared by \<author\>**
+**Prepared by Group 14 CP317
+        Member 1 Name:	 Amy Freij-Camacho				                ID: 211912090
+        Member 2 Name:	Jashandeep Singh			   		        ID: 169018282
+        Member 3 Name:	Jayden Lo						        ID: 169037199
+        Member 4 Name: 	Prabsimran Badwal				                ID: 169033506
+        Member 5 Name:	Pratyaksh Kumar						        ID: 169016114
 
 **Wilfrid Laurier University**
 
