@@ -1,17 +1,13 @@
 
+# **Health-Sync Software Documentation **
 
-# **Software Requirements Specification**
+**Prepared by Group 14 CP317**
 
-# **for**
-
-# **Health-Sync**
-
-**Prepared by Group 14 CP317
-        Member 1 Name:	 Amy Freij-Camacho				                ID: 211912090
-        Member 2 Name:	Jashandeep Singh			   		        ID: 169018282
-        Member 3 Name:	Jayden Lo						        ID: 169037199
-        Member 4 Name: 	Prabsimran Badwal				                ID: 169033506
-        Member 5 Name:	Pratyaksh Kumar						        ID: 169016114
+Member 1 Name:	 Amy Freij-Camacho				                ID: 211912090
+Member 2 Name:	Jashandeep Singh			   		        ID: 169018282
+Member 3 Name:	Jayden Lo						        ID: 169037199
+Member 4 Name: 	Prabsimran Badwal				                ID: 169033506
+Member 5 Name:	Pratyaksh Kumar						        ID: 169016114
 
 **Wilfrid Laurier University**
 
@@ -21,12 +17,12 @@
 
 **Table of Contents**
 
-**Summary                                                                                                          2**   
-**Introduction and problem definition                                                         3-4**  
-**Overall Description                                                                                         4**  
-**Operating Environment                                                                              5-6**  
-**System Architecture                                                                                    6-9**  
-**Functional Requirements                                                                               9**  
+**Summary                                                                                             
+**Introduction and problem definition                                                         
+**Overall Description                                                                                 
+**Operating Environment                                                                              
+**System Architecture                                                                                  
+**Functional Requirements                                                                             
 **Nonfunctional Requirements**                                                                                  
 **Solution Features**
 
