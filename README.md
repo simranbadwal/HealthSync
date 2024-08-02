@@ -1,5 +1,5 @@
 
-# **Health-Sync Software Documentation **
+# Health-Sync Software Documentation 
 
 **Prepared by Group 14 CP317**
 
