@@ -93,7 +93,7 @@ def doctorSearchResults():
 
 
 # change this to whatever path you want, i want shiffted the landing page to main route
-@views.route('/SIMRAN', methods=['GET','POST'])
+@views.route('/dashboard', methods=['GET','POST'])
 @login_required
 def home():
     
@@ -122,7 +122,7 @@ def home():
     else:
         userD1 = User.query.filter_by(id=current_user.id).first()
         data = ( 
-        "Dr",userD1.first_name, userD1.last_name, userD1.email
+        userD1.speciality,userD1.first_name, userD1.last_name, userD1.email
         )
         return render_template("home_doctor.html", user_id=current_user, headings=headings_Doctor, data=data)
 

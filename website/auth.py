@@ -9,7 +9,7 @@ auth = Blueprint('auth', __name__)
 headings = ("First Name", "Last Name", "Email", "Current or Previous Allergies", "Current or Previous Diseases",
              "Current Symptoms", "Current or Previous Medication", "Drugs Consumed in the Last Year", "Extra Information")
 
-headings_Doctor = ("Doctor Speciality","First Name", "Last Name", "Email")
+headings_Doctor = ("","First Name", "Last Name", "Email", "Doctor Speciality")
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -26,12 +26,12 @@ def login():
                 if userD1.isDoctor == False:
                     userD2 = HealthForm.query.filter_by(user_id=current_user.id).first()
                     data = (userD1.first_name, userD1.last_name, userD1.email, userD2.allergies, userD2.disease, userD2.symptoms, userD2.medication, userD2.drugs, userD2.extrainfo)
-                    return render_template("home.html", user_id=current_user, headings=headings, data=data)
+                    return redirect(url_for('views.home'))
                 else:
                     data = ( 
-                    "Dr",userD1.first_name, userD1.last_name, userD1.email
+                    "",userD1.first_name, userD1.last_name, userD1.email, userD1.speciality
                     )
-                    return render_template("home_doctor.html", user_id=current_user, headings=headings_Doctor, data=data)
+                    return redirect(url_for('views.home'))
             else:
                 flash('Incorrect Password, try again.', category='error')
         else:
