@@ -41,7 +41,7 @@ git clone https://github.com/simranbadwal/HealthSync cd HealthSync
 4. **Run the Application:**
 
    ```
-   flask run
+   python main.py
    ```
 
 5. **Access the Application:**
