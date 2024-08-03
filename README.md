@@ -2,6 +2,10 @@
 
 Health-Sync is a web-based application designed to enhance healthcare management by facilitating effective communication between patients and doctors and simplifying the management of medical records.
 
+#Demo
+
+
+
 ## Features
 
 - **User Registration and Authentication**
