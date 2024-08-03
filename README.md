@@ -23,7 +23,7 @@ Health-Sync is a web-based application designed to enhance healthcare management
 git clone https://github.com/simranbadwal/HealthSync cd HealthSync
 ```
 
-1. **Set Up Environment:**
+2. **Set Up Environment:**
 
    - Ensure Python and Flask are installed.
    - Create a virtual environment:
@@ -32,13 +32,13 @@ git clone https://github.com/simranbadwal/HealthSync cd HealthSync
      python3 -m venv venv source venv/bin/activate # On Windows use venv\Scripts\activate
      ```
 
-2. **Install Dependencies:**
+3. **Install Dependencies:**
 
    ```
    pip install -r requirements.txt
    ```
 
-3. **Set Up Database:**
+4. **Set Up Database:**
 
    - Configure the database settings in `config.py`.
    - Initialize the database:
@@ -47,13 +47,13 @@ git clone https://github.com/simranbadwal/HealthSync cd HealthSync
      flask db init flask db migrate flask db upgrade
      ```
 
-4. **Run the Application:**
+5. **Run the Application:**
 
    ```
    flask run
    ```
 
-5. **Access the Application:**
+6. **Access the Application:**
 
    - Open your web browser and go to `http://127.0.0.1:5000`.
 
