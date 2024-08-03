@@ -75,4 +75,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Acknowledgements
 
-Prepared by Amy Freij-Camacho, Prabsimran Badwal, Jayden Lo, Pratyaksh Kumar, and Jashandeep Singh at Wilfrid Laurier University.
+Prepared by Simran Badwal, Amy Freij-Camacho, Jayden Lo, Pratyaksh Kumar, and Jashandeep Singh at Wilfrid Laurier University.
