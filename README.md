@@ -38,24 +38,15 @@ git clone https://github.com/simranbadwal/HealthSync cd HealthSync
    pip install -r requirements.txt
    ```
 
-4. **Set Up Database:**
-
-   - Configure the database settings in `config.py`.
-   - Initialize the database:
-
-     ```
-     flask db init flask db migrate flask db upgrade
-     ```
-
-5. **Run the Application:**
+4. **Run the Application:**
 
    ```
    flask run
    ```
 
-6. **Access the Application:**
+5. **Access the Application:**
 
-   - Open your web browser and go to `http://127.0.0.1:5000`.
+   - Open your web browser and go to `http://127.0.0.1:3000`.
 
 ## Usage
 
